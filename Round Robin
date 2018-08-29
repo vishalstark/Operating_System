@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 
-int check(int a[],int n)
+/*int check(int a[],int n)
 {
 	int flg=0;
 	for(int i=0;i<n;i++)
@@ -11,7 +11,7 @@ int check(int a[],int n)
 		break;
 	}
 	return flg;
-}
+}*/
 int main()
 {
 	int n,tq=0;
@@ -30,8 +30,16 @@ int main()
 		rbt[i]=bt[i];
 	}
 	int i=0;
-	while(check(rbt,n))
+	while(1)
 	{
+		int flg=1;
+		
+		for(int i=0;i<n;i++)
+		{
+
+		if(rbt[i]>0){
+		
+		flg=0;
 		if(rbt[i]>tq)
 			{
 				t=t+tq;
@@ -44,8 +52,12 @@ int main()
 				wt[i]=t-bt[i];
 				tat[i]=wt[i]+bt[i];
 			}
+		}
 		
-		i=(i+1)%n;
+		}
+		if(flg==1)
+		break;
+		
 	}
 	
 	cout<<endl<<endl;
